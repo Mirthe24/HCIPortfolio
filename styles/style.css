@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+body {
+	background: rgb(65,27,69);
+background: linear-gradient(0deg, rgba(65,27,69,1) 0%, rgba(19,188,191,1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Lato;
+}
+
+h1, h2, h3{
+	text-align: center;
+	color: white;
+}
+h3{
+	font-size: 35pt;
+}
+
+div{
+	background-color: white;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 20px;
+	font-size: 30pt;
+	color: rgba(65,27,69,1);
+	-webkit-box-shadow: 17px 20px 20px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: 17px 20px 20px -10px rgba(0,0,0,0.75);
+box-shadow: 17px 20px 20px -10px rgba(0,0,0,0.75);
+}
+div:hover{
+	background-color: rgba(19,188,191,1);
+	color: white;
+}
+a{
+	text-decoration: none;
+}
+#deel1{
+	display: grid;
+    grid-template-areas: 
+     "AR W"
+     "AC PI" ;
+     grid-gap: 20px;
+     width: 100%;
+     margin-bottom: 50px;
+   }
+#ARVR{
+	grid-area: AR;
+	margin-left: 10%;
+}
+#W{
+	grid-area: W;
+	margin-right: 10%;
+}
+#AC{
+	grid-area: AC;
+	margin-left: 10%;
+}
+#PI{
+	grid-area: PI;
+	margin-right: 10%;
+}
+
+#deel2, #deel3{
+	width: 70%;
+	margin-right: 15%;
+	margin-left: 15%;
+}
+#deel2 div, #deel3 div{
+	margin-bottom: 30px;
+}
+

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+body {
+  background: rgb(65,27,69);
+background: linear-gradient(0deg, rgba(65,27,69,1) 0%, rgba(19,188,191,1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Lato;
+  margin: 0px;
+}
+
+h1, h2, h3, h4{
+  color: white;
+}
+
+h2{
+    margin-top: 70px;
+}
+/* [ON BIG SCREEN] */
+/* Wrapper */
+#hamnav {
+  width: 100%;
+  top: 0;
+  z-index: 2;
+
+
+}
+
+/* Hide Hamburger */
+#hamnav label, #hamburger { display: none; }
+
+/* Horizontal Menu Items */
+
+#hamitems a {
+  float: right;
+  padding: 10px;
+  margin-right:  80px;
+  color: white;
+  text-align: center;
+  font-family: mukta;
+  font-weight: 300;
+  font-size: 20px;
+  text-decoration: none;
+
+    display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+#hamitems #terug {
+  clear: both;
+  position: absolute;
+  top: 0px;
+ left: 10px;
+}
+
+
+#hamitems a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+#hamitems a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+#hero{
+  width: 100%;
+}
+p{
+  color: white;
+  line-height: 150%;
+}
+a{
+  color: white;
+}
+
+#main{
+  padding-left: 15%;
+    padding-right: 15%;
+}
+
+#main img, video{
+  height: 300px;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 800px){
+  /* Show Hamburger Icon */
+  #hamnav label { 
+    display: inline-block; 
+    padding: 10px;
+  }
+
+  /* Break down menu items into vertical */
+  #hamitems a {
+    display: block;
+    width: 100%;
+    border-top: 1px solid #333;
+    background-color: white;
+    margin-right: 0px;
+    font-family: mukta;
+    color: #0C1130;
+  }
+  #hamnav{
+    background-color: white;
+
+  }
+
+  /* Toggle Show/Hide Menu */
+  #hamitems { 
+    display: none; 
+  }
+  #hamnav input:checked ~ #hamitems { 
+  display: grid; 
+  }
+  #hamitems a:nth-of-type(1){
+    order: 4
+  }
+   #hamitems a:nth-of-type(2){
+    order: 3
+  }
+   #hamitems a:nth-of-type(3){
+    order: 2
+  }
+   #hamitems a:nth-of-type(4){
+    order: 1
+  }
+
+
+}
