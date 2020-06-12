@@ -1,0 +1,19 @@
+int speakerPin = 8;
+
+float sensorValue = 0;
+int sensorPin = A0;
+
+void setup(){
+  pinMode(sensorPin, INPUT);
+  Serial.begin(9600);
+
+  pinMode(speakerPin, OUTPUT);
+}
+
+void loop(){
+  sensorValue = analogRead(sensorPin);
+  sensorValue = map(sensorValue, 565 , 700 , 100 ,1000);
+
+  tone(speakerPin, sensorValue);
+  delay(30);
+}

@@ -1,0 +1,40 @@
+int speakerPin = 8;
+void setup() {
+ pinMode(speakerPin, OUTPUT);
+}
+void loop() {
+ tone(speakerPin, 329, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 250 ms
+ tone(speakerPin, 391, 200); // plays a tone of 294Hz for 200ms
+ delay(250); // wait 250 ms
+ tone(speakerPin, 440, 200); // plays a tone of 330Hz for 200ms
+ delay(250); // wait 250 ms
+ tone(speakerPin, 440, 200); // plays a tone of 262Hz for 200ms
+ delay(300); // wait 500 ms
+  tone(speakerPin, 440, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+  tone(speakerPin, 494, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+   tone(speakerPin, 523, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+   tone(speakerPin, 523, 200); // plays a tone of 262Hz for 200ms
+ delay(300); // wait 500 ms
+  tone(speakerPin, 523, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+   tone(speakerPin, 523, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+    tone(speakerPin, 494, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+    tone(speakerPin, 494, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+   tone(speakerPin, 440, 200); // plays a tone of 262Hz for 200ms
+ delay(250); // wait 500 ms
+ tone(speakerPin, 391, 200); // plays a tone of 294Hz for 200ms
+ delay(250); // wait 250 ms
+ tone(speakerPin, 391, 200); // plays a tone of 294Hz for 200ms
+ delay(250); // wait 250 ms
+  tone(speakerPin, 440, 200); // plays a tone of 262Hz for 200ms
+ delay(500); // wait 500 ms
+ 
+ 
+}

@@ -1,0 +1,26 @@
+/*
+ Controlling a servo position using a potentiometer (variable resistor)
+ by Michal Rinott <http://people.interaction-ivrea.it/m.rinott>
+
+ modified on 8 Nov 2013
+ by Scott Fitzgerald
+ http://www.arduino.cc/en/Tutorial/Knob
+*/
+
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+
+int potpin = 0;  
+int meter;   
+
+void setup() {
+  myservo.attach(9);  
+}
+
+void loop() {
+  meter = analogRead(potpin);            
+  meter = map(meter, 0, 1023, 0, 160);     
+  myservo.write(meter);                  
+  
+}
