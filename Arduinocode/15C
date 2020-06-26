@@ -2,13 +2,13 @@
 CapacitiveSensor touchSwitchA =
 CapacitiveSensor(13, 12);
 //1 megohm resistor between pins 13 & 12,
-pin 12 is sensor pin
+//pin 12 is sensor pin
 CapacitiveSensor touchSwitchB =
 CapacitiveSensor(11, 10);
 //1 megohm resistor between pins 11 & 10, pin 10 is sensor pin
 CapacitiveSensor touchSwitchC = CapacitiveSensor(9, 8);
 //1 megohm resistor between pins 9 & 8, pin 8 is sensor pin
-37
+
 CapacitiveSensor touchSwitchD = CapacitiveSensor(7, 6);
 //1 megohm resistor between pins 7 & 6, pin 6 is sensor pin
 CapacitiveSensor touchSwitchE = CapacitiveSensor(5, 4);
@@ -30,7 +30,7 @@ void loop()
  valueA = map(valueA, 150, 3000, 0, 255);
  Serial.println(valueA);
  if (valueA>100){ //if sensor value is above threshold, play tone
- tone(speakerPin, 440, 200); // plays a tone of 440Hz for 200ms
+ tone(speakerPin, 220, 200); // plays a tone of 440Hz for 200ms
  }
  //read sensor B
  long valueB = touchSwitchB.capacitiveSensor(30);
@@ -38,7 +38,7 @@ void loop()
  valueB = map(valueB, 150, 3000, 0, 255);
  Serial.println(valueB);
  if(valueB>100){ //if sensor B value is above threshold, play tone
- tone(speakerPin, 493, 200); // plays a tone of 493Hz for 200ms
+ tone(speakerPin, 246, 200); // plays a tone of 493Hz for 200ms
  }
  //read sensor C
  long valueC = touchSwitchC.capacitiveSensor(30);
@@ -46,16 +46,16 @@ void loop()
  valueC = map(valueC, 150, 3000, 0, 255);
  Serial.println(valueC);
  if (valueC>100){ //if sensor value is above threshold, play tone
- tone(speakerPin, 262, 200); // plays a tone of 262Hz for 200ms
+ tone(speakerPin, 261, 200); // plays a tone of 262Hz for 200ms
  }
  //read sensor D
  long valueD = touchSwitchD.capacitiveSensor(30);
  valueD = constrain(valueD, 150, 3000);
- valueD = map(valueD, 150, 3000, 0, 255);
-38
+ valueD = map(valueD, 293, 3000, 0, 255);
+
  Serial.println(valueD);
  if (valueD>100){ //if sensor value is above threshold, play tone
- tone(speakerPin, 330, 200); // plays a tone of 330Hz for 200ms
+ tone(speakerPin, 329, 200); // plays a tone of 330Hz for 200ms
  }
  //read sensor E
  long valueE = touchSwitchE.capacitiveSensor(30);
@@ -63,7 +63,7 @@ void loop()
  valueE = map(valueE, 150, 3000, 0, 255);
  Serial.println(valueE);
  if (valueE>100){ //if sensor value is above threshold, play tone
- tone(speakerPin, 330, 200); // plays a tone of 262Hz for 200ms
+ tone(speakerPin, 350, 200); // plays a tone of 262Hz for 200ms
  }
  //read sensor F
  long valueF = touchSwitchF.capacitiveSensor(30);
@@ -71,6 +71,6 @@ void loop()
  valueF = map(valueF, 150, 3000, 0, 255);
  Serial.println(valueF);
  if (valueF>100){ //if sensor value is above threshold, play tone
- tone(speakerPin, 349, 200); // plays a tone of 262Hz for 200ms
+ tone(speakerPin, 390, 200); // plays a tone of 262Hz for 200ms
  }
 }
