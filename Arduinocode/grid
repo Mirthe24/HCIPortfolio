@@ -1,0 +1,31 @@
+#include <CapacitiveSensor.h>
+CapacitiveSensor touchSwitch1 = CapacitiveSensor(3, 2);
+CapacitiveSensor touchSwitch2 = CapacitiveSensor(5,4);
+CapacitiveSensor touchSwitch3 = CapacitiveSensor(6, 7);
+CapacitiveSensor touchSwitch4 = CapacitiveSensor(9, 8);
+
+void setup(){
+Serial.begin(9600);
+}
+void loop(){
+int sensor1 = touchSwitch1.capacitiveSensor(100);
+int sensor2 = touchSwitch2.capacitiveSensor(100);
+int sensor3 = touchSwitch3.capacitiveSensor(100);
+int sensor4 = touchSwitch4.capacitiveSensor(100);
+
+//Serial.println(sensor4);
+ if (sensor1 > 3000 && sensor3 > 3000){
+  Serial.println ('E');
+ }
+ 
+ else if (sensor1 > 1800 && sensor4 >1800){
+   Serial.println ('F');
+ }
+  else if (sensor3 > 1800 && sensor2 > 100){
+     Serial.println ('G');
+ }
+  else if (sensor4 > 1800 && sensor2 > 100){
+     Serial.println ('H');
+ }
+ 
+}

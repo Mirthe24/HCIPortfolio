@@ -1,0 +1,13 @@
+void setup() {
+ size(500,500);
+ background (200,200,200);
+ frameRate(15);
+}
+void draw() {
+  stroke(mouseX,mouseY, mouseY);
+  strokeWeight(4);
+  line(250,250, mouseX, mouseY);
+  noStroke();
+  fill(mouseY, mouseX, mouseX);
+  ellipse(mouseX, mouseY, 10,10);
+}

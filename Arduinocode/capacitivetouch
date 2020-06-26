@@ -1,0 +1,32 @@
+#include <CapacitiveSensor.h>
+CapacitiveSensor touchSwitchAB = CapacitiveSensor(3, 2);
+CapacitiveSensor touchSwitchCD = CapacitiveSensor(5,4);
+CapacitiveSensor touchSwitchEF = CapacitiveSensor(6, 7);
+
+
+void setup(){
+Serial.begin(9600);
+}
+void loop(){
+int val = touchSwitchAB.capacitiveSensor(100);
+int val1 = touchSwitchCD.capacitiveSensor(100);
+int val2 = touchSwitchEF.capacitiveSensor(100);
+int prin;
+//Serial.println(val1);
+ if (val > 1800){
+  Serial.println ('A'); // print sensor output
+  Serial.println ('D');
+ }
+ 
+ else if (val1 > 1300){
+  Serial.println ('C'); // print sensor output
+  Serial.println ('D');
+ }
+  else if (val2 > 1000){
+  Serial.println ('E'); // print sensor output
+  Serial.println ('D');
+  
+ }
+
+ //De D zorgt voor dat de muziek niet nog een keer afspeelt als het liedje klaar is. 
+}

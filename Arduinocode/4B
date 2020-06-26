@@ -1,0 +1,50 @@
+import processing.serial.*;
+Serial myPort; // Create object from Serial class
+int val; // Data received from the serial port
+void setup()
+{
+size(1000, 200);
+ String portName = Serial.list()[0]; //adjust 0 to the port your Arduino
+//is connected to
+ myPort = new Serial(this, portName, 9600);
+}
+void draw() {
+ background(255);
+ if (mouseOverRect1() == true) { // If mouse is over square,
+ myPort.write('A'); // send an H to indicate mouse is over square
+ }
+ else if (mouseOverRect2() == true) { // If mouse is over square,
+ myPort.write('B'); // send an H to indicate mouse is over square
+ }
+ else if (mouseOverRect3() == true) { // If mouse is over square,
+ myPort.write('C'); // send an H to indicate mouse is over square
+ }
+ else if (mouseOverRect4() == true) { // If mouse is over square,
+ myPort.write('D'); // send an H to indicate mouse is over square
+ }
+ noStroke();
+ fill(250);
+ rect(50, 50, 100, 100); // Draw a square
+ fill(200);
+ rect(150, 50, 100, 100); // Draw a square
+ fill(150);
+ rect(250, 50, 100, 100); // Draw a square
+ fill(50);
+ rect(350, 50, 100, 100); // Draw a square
+}
+boolean mouseOverRect1() { // Test if mouse is over square
+ return ((mouseX >= 50) && (mouseX <= 150) && (mouseY >= 50) && (mouseY
+<= 150));
+}
+boolean mouseOverRect2() { // Test if mouse is over square
+ return ((mouseX >= 150) && (mouseX <= 250) && (mouseY >= 50) && (mouseY
+<= 150));
+}
+boolean mouseOverRect3() { // Test if mouse is over square
+ return ((mouseX >= 250) && (mouseX <= 350) && (mouseY >= 50) && (mouseY
+<= 150));
+}
+boolean mouseOverRect4() { // Test if mouse is over square
+ return ((mouseX >= 350) && (mouseX <= 450) && (mouseY >= 50) && (mouseY
+<= 150));
+}

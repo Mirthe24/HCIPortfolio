@@ -1,0 +1,52 @@
+import processing.serial.*;
+import processing.sound.*;
+
+SoundFile file1;
+SoundFile file2;
+SoundFile file3;
+Serial myPort;  // Create object from Serial class
+String val;     // Data received from the serial port
+
+void setup()
+{
+  size(300,300);
+  // I know that the first port in the serial list on my mac
+  // is Serial.list()[0].
+  // On Windows machines, this generally opens COM1.
+  // Open whatever port is the one you're using.
+  String portName = Serial.list()[0]; //change the 0 to a 1 or 2 etc. to match your port
+  myPort = new Serial(this, portName, 9600);
+  file1 = new SoundFile(this,"Shinhwa.mp3");
+  file2 = new SoundFile(this,"EXO.mp3");
+  file3 = new SoundFile(this,"BTS.mp3");
+  file1.rate(1.09);
+  file2.rate(1.09);
+  file3.rate(1.09);
+}
+
+void draw()
+{
+  if ( myPort.available() > 0) 
+  {  // If data is available,
+  val = trim( myPort.readStringUntil(ENTER) );
+       // read it and store it in val
+  } 
+println(val); //print it out in the console
+
+
+if ("A".equals(val) && file1.isPlaying()==false  && file2.isPlaying()==false  && file3.isPlaying()==false) {
+
+file1.play();
+}
+
+
+ else if ("C".equals(val) && file2.isPlaying()==false  && file3.isPlaying()==false  && file1.isPlaying()==false) {
+
+file2.play();
+}
+
+
+else if ("E".equals(val) && file3.isPlaying()==false  && file2.isPlaying()==false  && file1.isPlaying()==false) {
+
+file3.play();
+} }

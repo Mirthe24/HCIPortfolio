@@ -1,0 +1,81 @@
+#include "LedControl.h"
+
+char inChar;
+LedControl lc = LedControl(12,11,10,1);
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
+  lc.shutdown(0,false); // Turn matrix on, no power saving
+  lc.setIntensity(0,8); // Set brightness to a medium value
+  lc.clearDisplay(0); // Clear the display
+
+     lc.setRow(0,0,B00000000);
+     lc.setRow(0,1,B00000000);
+     lc.setRow(0,2,B00000000);
+     lc.setRow(0,3,B10000001);
+     lc.setRow(0,4,B01000010);
+     lc.setRow(0,5,B00111100);
+     lc.setRow(0,6,B00000000);
+     lc.setRow(0,7,B00000000);
+}
+
+void loop() {
+
+  while(Serial.available()){
+    inChar=Serial.read();
+    doStuff(); 
+  }
+  delay (1);
+}
+
+void doStuff(){
+  if (inChar == '1'){
+    // Arduino zegt hoi
+    Serial.println("Hey");
+    digitalWrite(LED_BUILTIN, HIGH);
+    
+  } else if (inChar == '0'){
+    // Arduino zegt doei
+    Serial.println("Doei");
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  else if(inChar == '2'){
+     lc.setRow(0,0,B00111100); // set the first row of the matrix
+     lc.setRow(0,1,B01000010); // set the second row of the matrix
+     lc.setRow(0,2,B10000001); // etc.
+     lc.setRow(0,3,B10000001);
+     lc.setRow(0,4,B10000001);
+     lc.setRow(0,5,B10000001);
+     lc.setRow(0,6,B01000010);
+     lc.setRow(0,7,B00111100);
+     delay(1000);
+     lc.setRow(0,0,B00000000);
+     lc.setRow(0,1,B00111100);
+     lc.setRow(0,2,B01000010);
+     lc.setRow(0,3,B01000010);
+     lc.setRow(0,4,B01000010);
+     lc.setRow(0,5,B01000010);
+     lc.setRow(0,6,B00111100);
+     lc.setRow(0,7,B00000000);
+     delay(1000);
+     lc.setRow(0,0,B00000000);
+     lc.setRow(0,1,B00000000);
+     lc.setRow(0,2,B00011000);
+     lc.setRow(0,3,B00100100);
+     lc.setRow(0,4,B00100100);
+     lc.setRow(0,5,B00011000);
+     lc.setRow(0,6,B00000000);
+     lc.setRow(0,7,B00000000);
+     delay(1000);
+       lc.setRow(0,0,B00000000);
+     lc.setRow(0,1,B00000000);
+     lc.setRow(0,2,B00000000);
+     lc.setRow(0,3,B10000001);
+     lc.setRow(0,4,B01000010);
+     lc.setRow(0,5,B00111100);
+     lc.setRow(0,6,B00000000);
+     lc.setRow(0,7,B00000000);
+        
+  }
+}

@@ -1,0 +1,17 @@
+#include <Servo.h>
+
+Servo servo;         
+
+void setup() { 
+  servo.attach(10);  
+
+} 
+
+void loop() {            
+forward() ;        
+}
+
+void forward(){
+  servo.write(180);
+
+}

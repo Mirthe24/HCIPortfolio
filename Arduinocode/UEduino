@@ -1,0 +1,28 @@
+char inChar;
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+void loop() {
+
+  while(Serial.available()){
+    inChar=Serial.read();
+    doStuff(); 
+  }
+  delay (1);
+}
+
+void doStuff(){
+  if (inChar == '1'){
+    // Arduino zegt hoi
+    Serial.println("Hey");
+    digitalWrite(LED_BUILTIN, HIGH);
+    
+  } else if (inChar == '0'){
+    // Arduino zegt doei
+    Serial.println("Doei");
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+}

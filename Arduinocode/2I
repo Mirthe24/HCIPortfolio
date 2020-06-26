@@ -1,0 +1,16 @@
+void setup(){
+  size(500,500);
+  stroke(6,0,80);
+  fill(30,44,90);
+  triangle(30, 50, 60, 50, 90, 100);
+  strokeWeight(8);
+  stroke(7,240,60);
+  line(0,500,500,0);
+  strokeWeight(1);
+  fill(90,11, 200);
+  rect(90, 100, 50, 450);
+  fill(10,101, 200);
+  quad(203, 90, 303,54, 86,202,101,66);
+}
+void draw(){
+}
